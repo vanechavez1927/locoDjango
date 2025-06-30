@@ -1,0 +1,42 @@
+{%load static%}
+<html lang="es">
+  <head>
+    <title>{%block titulo%} {% endblock%}</title>
+	    <link rel="stylesheet" href="{% static 'contenido/css/style.css' %}">
+  </head>
+
+  <body>
+
+</head>
+
+<body>
+
+	
+
+ 	<div class="page-container">
+
+
+		<!-- Barra de menú -->
+		<div class="sidebar">
+
+			<div class="sidebar-content">
+				<!-- Menú de navegación -->
+                <a href="{%url 'inicio'%}">Inicio</a>
+                <a href="{%url 'cursos'%}">Cursos</a>
+                <a href="{%url 'contacto'%}">Contacto</a>
+
+							
+				<!-- /Fin menú -->
+			</div>
+		</div>
+		<!-- /sidebar -->
+
+
+
+		<!-- Contenido Principal-->
+		 {% block contenido %}{% endblock %}
+
+
+	</div>
+  </body>
+</html>

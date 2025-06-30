@@ -1,0 +1,34 @@
+{% extends "navegacion.html" %}
+{%block titulo%}Contacto {%endblock%}
+
+{% load static %}
+
+ {% block contenido%}
+
+	<!-- Contenido Principal-->
+	 	<div class="page-content">
+
+
+			<!--Encabezdo -->
+    <div class="page-header">
+      <div class="page-title">
+            <h2> Registrar </h2>
+    <p>Nombre: <input type="text" name="Nombre"></p>
+    <p>Correo electronico: <input type="mail" name="correo"></p>
+    <p>Curso:
+        <select name="curso">
+            <option>Base de datos</option>
+            <option>Programación</option>
+            <option>Programación orientada a objetos</option>
+            <option>Diseño de páginas web</option>
+            <option>UX/UI</option>
+        </select>
+    </p>
+    <p>Comentarios</p>
+    <textarea></textarea>
+    <p><input type="button" name="enviar" value="Enviar"></p>
+	</div>
+	</div>
+	</div>
+		<!-- /Contenido Principal-->
+{% endblock%}
