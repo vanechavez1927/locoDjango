@@ -11,7 +11,6 @@ class Curso(models.Model):
         verbose_name='Descripción Detallada',
         help_text="Proporciona una descripción completa del contenido del curso."
     )
-    # Imagen del curso, similar a Alumnos.imagen
     imagen = models.ImageField(
         upload_to='cursos_imagenes/',
         null=True,
