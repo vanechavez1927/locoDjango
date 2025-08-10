@@ -1,34 +1,41 @@
-{% extends "navegacion.html" %}
-{%block titulo%}Contacto {%endblock%}
+{% extends 'navegacion.html' %}
+{% block title %} Contacto {% endblock %}
 
-{% load static %}
+{% block content %}
 
- {% block contenido%}
-
-	<!-- Contenido Principal-->
-	 	<div class="page-content">
+<div class="container-fluid">
 
 
-			<!--Encabezdo -->
-    <div class="page-header">
-      <div class="page-title">
-            <h2> Registrar </h2>
-    <p>Nombre: <input type="text" name="Nombre"></p>
-    <p>Correo electronico: <input type="mail" name="correo"></p>
-    <p>Curso:
-        <select name="curso">
-            <option>Base de datos</option>
-            <option>Programación</option>
-            <option>Programación orientada a objetos</option>
-            <option>Diseño de páginas web</option>
-            <option>UX/UI</option>
-        </select>
-    </p>
-    <p>Comentarios</p>
-    <textarea></textarea>
-    <p><input type="button" name="enviar" value="Enviar"></p>
-	</div>
-	</div>
-	</div>
-		<!-- /Contenido Principal-->
-{% endblock%}
+    <div class="container col-md-4">
+        <h3>Formulario de Contacto</h3>
+        <br>
+        <form method="post">
+
+            <label for="" class="form-label">Nombre</label>
+            <input type="text" id="" class="form-control">
+            <br>
+
+            <label for="" class="form-label">Correo Electrónico</label>
+            <input type="email" id="" class="form-control">
+            <br>
+
+            <label for="" class="form-label">Curso de Interés</label>
+            <select name="curso" class="form-control">
+                <option value="">Selecciona un curso</option>
+                <option value="bdd">Bases de Datos</option>
+                <option value="poo">Programación Orientada a Objetos</option>
+                <option value="cd">Ciencia de Datos</option>
+            </select>
+            <br>
+
+            <label for="" class="form-label">Comentarios</label>
+            <textarea name="comentarios" rows="4" cols="40" class="form-control"></textarea>
+            <br>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

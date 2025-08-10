@@ -1,24 +1,14 @@
-{% extends "navegacion.html" %}
-{%block titulo%}Principal {%endblock%}
+{% extends 'navegacion.html' %}
+{% block title %} Inicio {% endblock %}
 
-{% load static %}
+{% block content %}
 
+<div class="container-fluid">
 
+ <h3>Bienvenido a nuestra página de cursos online!</h3>
+        <p>Aquí encontrarás una gran diversidad de material didáctico para aprender lo básico de programación.</p>
+    
 
-< class="page-content">
-{% block contenido%}
+</div>
 
-<!-- Contenido Principal-->
-	 	<div class="page-content">
-
-
-			<!--Encabezdo -->
-		<div>
-            <h1>Bienvenidos</h1>
-            <p>Aqui se pueden ver los cursos y pedir informacion.</p>
-        </div>
-		
-		</div>
-		<!-- /Contenido Principal-->
-
-{% endblock%}
+{% endblock %}

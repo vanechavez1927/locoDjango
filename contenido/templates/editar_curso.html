@@ -1,0 +1,55 @@
+{% extends 'navegacion.html' %}
+{% block title %}Editar Curso{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <h3 class="mb-4">Editar Curso</h3>
+
+  <form method="POST" enctype="multipart/form-data" class="row g-3">
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label for="id_nombre" class="form-label">Nombre del curso</label>
+      <input type="text" name="nombre" class="form-control" id="id_nombre" value="{{ form.nombre.value }}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="id_descripcion" class="form-label">Descripción</label>
+      <textarea name="descripcion" class="form-control" id="id_descripcion" rows="3">{{ form.descripcion.value }}</textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="id_duracion" class="form-label">Duración (minutos)</label>
+      <input type="number" name="duracion" class="form-control" id="id_duracion" value="{{ form.duracion.value }}" min="0">
+    </div>
+
+    <div class="mb-3">
+      <label for="id_precio" class="form-label">Precio</label>
+      <input type="number" name="precio" class="form-control" id="id_precio" value="{{ form.precio.value }}" step="0.01" min="0">
+    </div>
+
+    <div class="mb-3">
+      <label for="id_maximo" class="form-label">Cupo máximo</label>
+      <input type="number" name="maximo" class="form-control" id="id_maximo" value="{{ form.maximo.value }}" min="0">
+    </div>
+
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" name="gratis" id="id_gratis" {% if form.gratis.value %}checked{% endif %}>
+      <label class="form-check-label" for="id_gratis">¿Es gratuito?</label>
+    </div>
+
+    <div class="mb-3">
+      <label for="id_imagen" class="form-label">Imagen del curso</label>
+      <input class="form-control" type="file" name="imagen" id="id_imagen">
+      {% if form.instance.imagen %}
+        <small class="text-muted">Imagen actual: <a href="{{ form.instance.imagen.url }}" target="_blank">ver</a></small>
+      {% endif %}
+    </div>
+
+    <div class="col-12 mt-4">
+      <button type="submit" class="btn btn-success">Actualizar</button>
+      <a href="{% url 'cursos' %}" class="btn btn-secondary">Cancelar</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
